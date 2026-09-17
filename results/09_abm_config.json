@@ -1,0 +1,31 @@
+{
+  "notebook": "09_abm_design_calibration",
+  "seed": 42,
+  "primary_target": "any_observed_readmission_under_30d",
+  "network_type": "clinical_patient_similarity_network",
+  "network_k": 10,
+  "agent_count_train": 50062,
+  "agent_state_variables": [
+    "patient_nbr",
+    "clinical_state",
+    "utilization_state",
+    "risk_state",
+    "neighbors",
+    "weighted_degree",
+    "community",
+    "intervention_state",
+    "outcome_state",
+    "time_step"
+  ],
+  "transition_model": "probabilistic_stable_to_readmitted",
+  "transition_formula": "clip(baseline_risk * calibration_multiplier * (1-intervention_effect), 0, 1)",
+  "calibration_multiplier": 1.0,
+  "calibration_population": "training",
+  "validation_used_for_check": true,
+  "test_used_for_calibration": false,
+  "intervention_effect_in_notebook_09": 0.0,
+  "intervention_policies_in_notebook_09": false,
+  "target_used_to_construct_network": false,
+  "csv_row_order_used_as_time": false,
+  "temporal_limitation_documented": true
+}

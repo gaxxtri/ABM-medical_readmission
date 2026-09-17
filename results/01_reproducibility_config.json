@@ -1,0 +1,11 @@
+{
+    "python_version": "3.11.9",
+    "pandas_version": "3.0.0",
+    "numpy_version": "2.4.1",
+    "dataset_file": "diabetic_data.csv",
+    "dataset_path": "c:\\Users\\Gayatri\\OneDrive\\Desktop\\sna\\diabetes+130-us+hospitals+for+years+1999-2008\\diabetic_data.csv",
+    "raw_rows": 101766,
+    "raw_columns": 50,
+    "unique_patients": 71518,
+    "unique_encounters": 101766
+}

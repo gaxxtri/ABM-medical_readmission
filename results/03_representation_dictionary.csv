@@ -1,0 +1,47 @@
+variable,group,definition,used_as_feature,notes
+patient_nbr,identifier,Patient identifier used as the patient/network node identifier.,False,Identifier only.
+encounter_count,utilization,Number of encounter records available for the patient.,True,Not a temporal prior-utilization measure.
+number_inpatient_sum,utilization,sum of number_inpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_inpatient_mean,utilization,mean of number_inpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_inpatient_max,utilization,max of number_inpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_emergency_sum,utilization,sum of number_emergency across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_emergency_mean,utilization,mean of number_emergency across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_emergency_max,utilization,max of number_emergency across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_outpatient_sum,utilization,sum of number_outpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_outpatient_mean,utilization,mean of number_outpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+number_outpatient_max,utilization,max of number_outpatient across available encounters for the patient.,True,Temporal ordering is unavailable.
+num_lab_procedures_sum,clinical_count,sum of num_lab_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_lab_procedures_mean,clinical_count,mean of num_lab_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_lab_procedures_max,clinical_count,max of num_lab_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_procedures_sum,clinical_count,sum of num_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_procedures_mean,clinical_count,mean of num_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_procedures_max,clinical_count,max of num_procedures across available encounters.,True,Temporal ordering is unavailable.
+num_medications_sum,clinical_count,sum of num_medications across available encounters.,True,Temporal ordering is unavailable.
+num_medications_mean,clinical_count,mean of num_medications across available encounters.,True,Temporal ordering is unavailable.
+num_medications_max,clinical_count,max of num_medications across available encounters.,True,Temporal ordering is unavailable.
+number_diagnoses_sum,clinical_count,sum of number_diagnoses across available encounters.,True,Temporal ordering is unavailable.
+number_diagnoses_mean,clinical_count,mean of number_diagnoses across available encounters.,True,Temporal ordering is unavailable.
+number_diagnoses_max,clinical_count,max of number_diagnoses across available encounters.,True,Temporal ordering is unavailable.
+medication_active_entries_sum,medication_burden,Patient-level medication-status burden summary.,True,Non-missing values other than 'No' are treated as recorded active/change status.
+medication_active_entries_mean,medication_burden,Patient-level medication-status burden summary.,True,Non-missing values other than 'No' are treated as recorded active/change status.
+medication_active_entries_max,medication_burden,Patient-level medication-status burden summary.,True,Non-missing values other than 'No' are treated as recorded active/change status.
+distinct_medications_recorded_active,medication_burden,Patient-level medication-status burden summary.,True,Non-missing values other than 'No' are treated as recorded active/change status.
+diagnosis_entries_sum,diagnosis_burden,Patient-level diagnosis burden summary.,True,Diagnosis codes are not outcome-derived.
+diagnosis_entries_mean,diagnosis_burden,Patient-level diagnosis burden summary.,True,Diagnosis codes are not outcome-derived.
+diagnosis_entries_max,diagnosis_burden,Patient-level diagnosis burden summary.,True,Diagnosis codes are not outcome-derived.
+unique_diagnosis_codes,diagnosis_burden,Patient-level diagnosis burden summary.,True,Diagnosis codes are not outcome-derived.
+race_mode,demographic_context,Deterministic patient-level mode of race.,True,Ties resolved lexicographically; no encounter order assumed.
+gender_mode,demographic_context,Deterministic patient-level mode of gender.,True,Ties resolved lexicographically; no encounter order assumed.
+age_mode,demographic_context,Deterministic patient-level mode of age.,True,Ties resolved lexicographically; no encounter order assumed.
+admission_type_id_mode,demographic_context,Deterministic patient-level mode of admission_type_id.,True,Ties resolved lexicographically; no encounter order assumed.
+admission_source_id_mode,demographic_context,Deterministic patient-level mode of admission_source_id.,True,Ties resolved lexicographically; no encounter order assumed.
+A1Cresult_mode,demographic_context,Deterministic patient-level mode of A1Cresult.,True,Ties resolved lexicographically; no encounter order assumed.
+change_mode,demographic_context,Deterministic patient-level mode of change.,True,Ties resolved lexicographically; no encounter order assumed.
+diabetesMed_mode,demographic_context,Deterministic patient-level mode of diabetesMed.,True,Ties resolved lexicographically; no encounter order assumed.
+discharge_disposition_id,excluded,Not included in current patient feature representation.,False,review_required
+encounter_id,excluded,Not included in current patient feature representation.,False,identifier
+max_glu_serum,excluded,Not included in current patient feature representation.,False,>=90% missing
+patient_nbr,excluded,Not included in current patient feature representation.,False,identifier
+readmitted,excluded,Not included in current patient feature representation.,False,target
+time_in_hospital,excluded,Not included in current patient feature representation.,False,review_required
+weight,excluded,Not included in current patient feature representation.,False,>=90% missing

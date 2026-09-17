@@ -1,0 +1,82 @@
+{
+  "notebook": "03_patient_representation",
+  "seed": 42,
+  "input_file": "c:\\Users\\Gayatri\\OneDrive\\Desktop\\sna\\results\\02_cleaned_encounters.csv",
+  "input_encounters": 101766,
+  "input_unique_patients": 71518,
+  "output_patient_rows": 71518,
+  "output_feature_columns": 38,
+  "target_rows": 71518,
+  "medication_columns_detected": [
+    "metformin",
+    "repaglinide",
+    "nateglinide",
+    "chlorpropamide",
+    "glimepiride",
+    "acetohexamide",
+    "glipizide",
+    "glyburide",
+    "tolbutamide",
+    "pioglitazone",
+    "rosiglitazone",
+    "acarbose",
+    "miglitol",
+    "troglitazone",
+    "tolazamide",
+    "examide",
+    "citoglipton",
+    "insulin",
+    "glyburide-metformin",
+    "glipizide-metformin",
+    "glimepiride-pioglitazone",
+    "metformin-rosiglitazone",
+    "metformin-pioglitazone"
+  ],
+  "diagnosis_columns_detected": [
+    "diag_1",
+    "diag_2",
+    "diag_3"
+  ],
+  "utilization_columns": [
+    "number_inpatient",
+    "number_emergency",
+    "number_outpatient"
+  ],
+  "clinical_count_columns": [
+    "num_lab_procedures",
+    "num_procedures",
+    "num_medications",
+    "number_diagnoses"
+  ],
+  "context_columns": [
+    "race",
+    "gender",
+    "age",
+    "admission_type_id",
+    "admission_source_id",
+    "A1Cresult",
+    "change",
+    "diabetesMed"
+  ],
+  "excluded_columns": [
+    "discharge_disposition_id",
+    "encounter_id",
+    "max_glu_serum",
+    "patient_nbr",
+    "readmitted",
+    "time_in_hospital",
+    "weight"
+  ],
+  "checks": {
+    "patient_row_count_matches_nunique": true,
+    "patient_ids_unique": true,
+    "patient_id_present": true,
+    "encounter_id_absent": true,
+    "readmission_target_absent_from_features": true,
+    "numeric_values_finite": true,
+    "count_variables_nonnegative": true,
+    "target_separate": true,
+    "target_patient_count_matches": true
+  },
+  "temporal_limitation": "No encounter timestamps are available in the dataset; cumulative observed utilization is not labelled as prior utilization. Notebook 04 must define the leakage-safe prediction/intervention point."
+}

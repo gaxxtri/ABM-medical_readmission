@@ -1,0 +1,31 @@
+{
+  "notebook": "11_intervention_experiments",
+  "seed": 42,
+  "replications": 100,
+  "validation_population_only": true,
+  "test_used": false,
+  "validation_patients": 10728,
+  "intervention_budget_fraction": 0.1,
+  "intervention_count": 1073,
+  "intervention_effect": 0.2,
+  "validation_network": {
+    "metric": "cosine",
+    "rule": "mutual_knn",
+    "k": 10,
+    "nodes": 10728,
+    "edges": 30245
+  },
+  "network_informed_score": {
+    "risk_weight": 0.7,
+    "network_weight": 0.2,
+    "community_risk_weight": 0.1
+  },
+  "policies": [
+    "no_intervention",
+    "random",
+    "risk_based",
+    "network_informed"
+  ],
+  "common_random_numbers": true,
+  "observed_outcome_used_for_targeting": false
+}

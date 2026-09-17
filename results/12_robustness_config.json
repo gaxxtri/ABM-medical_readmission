@@ -1,0 +1,6 @@
+{
+  "notebook": "12_robustness_final",
+  "seed": 42,
+  "purpose": "Robustness, ablation and final evaluation of the patient similarity network ABM",
+  "network_target_stability_available": true
+}

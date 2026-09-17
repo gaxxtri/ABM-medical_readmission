@@ -1,0 +1,15 @@
+{
+    "raw_rows": 101766,
+    "clean_rows": 101766,
+    "raw_columns": 50,
+    "clean_columns": 50,
+    "raw_unique_patients": 71518,
+    "clean_unique_patients": 71518,
+    "question_marks_before": 192849,
+    "question_marks_after": 0,
+    "candidate_feature_count": 43,
+    "excluded_variable_count": 2,
+    "review_required_count": 2,
+    "identifier_count": 2,
+    "target_count": 1
+}

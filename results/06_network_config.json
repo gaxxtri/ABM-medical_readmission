@@ -1,0 +1,20 @@
+{
+  "network_type": "clinical_patient_similarity_network",
+  "node_definition": "one training patient",
+  "edge_definition": "mutual k-nearest-neighbour clinical similarity",
+  "similarity_metric": "cosine",
+  "edge_weight": "cosine_similarity",
+  "primary_k": 10,
+  "candidate_k_values": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "similarity_threshold_sensitivity": 0.7,
+  "target_used_for_network": false,
+  "identifier_used_for_similarity": false,
+  "validation_test_patients_in_training_network": false,
+  "dense_all_pairs_matrix_created": false,
+  "seed": 42
+}

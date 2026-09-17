@@ -1,0 +1,7 @@
+{
+  "notebook": "10_abm_validation",
+  "seed": 42,
+  "max_absolute_rate_gap_screening_threshold": 0.05,
+  "test_used_for_tuning": false,
+  "purpose": "No-intervention ABM validation against observed validation data"
+}

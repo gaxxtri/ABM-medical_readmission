@@ -1,0 +1,45 @@
+{
+  "notebook": "04_split_leakage_check",
+  "seed": 42,
+  "split_ratio": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "primary_target": "any_observed_readmission_under_30d",
+  "sensitivity_target": "any_observed_readmission",
+  "primary_target_definition": "1 if a patient has at least one observed encounter labelled <30; otherwise 0.",
+  "temporal_split_used": false,
+  "temporal_audit": {
+    "timestamp_columns_detected": [],
+    "temporal_split_used": false,
+    "csv_row_order_used_as_time": false,
+    "reason": "No reliable encounter date/timestamp is available; CSV row order is not treated as chronology.",
+    "strict_pre_prediction_feature_leakage_verifiable": false
+  },
+  "patient_counts": {
+    "all": 71518,
+    "train": 50062,
+    "validation": 10728,
+    "test": 10728
+  },
+  "final_checks": {
+    "primary_target_defined": true,
+    "patient_count_preserved": true,
+    "train_ids_unique": true,
+    "validation_ids_unique": true,
+    "test_ids_unique": true,
+    "train_validation_zero_overlap": true,
+    "train_test_zero_overlap": true,
+    "validation_test_zero_overlap": true,
+    "all_patients_assigned_once": true,
+    "no_outcome_columns_in_features": true,
+    "train_output_exists": true,
+    "validation_output_exists": true,
+    "test_output_exists": true,
+    "train_id_output_exists": true,
+    "validation_id_output_exists": true,
+    "test_id_output_exists": true,
+    "temporal_limitation_documented": true
+  }
+}

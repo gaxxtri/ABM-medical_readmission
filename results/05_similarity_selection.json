@@ -1,0 +1,11 @@
+{
+  "primary_similarity": "cosine",
+  "feature_space": "median-imputed numeric + standardized numeric + one-hot categorical",
+  "preprocessing_fit_on": "train only",
+  "target_used_in_similarity": false,
+  "identifier_used_in_similarity": false,
+  "missingness_used_as_similarity": false,
+  "dense_all_pairs_matrix_created": false,
+  "manual_review_required": true,
+  "manual_review_file": "c:\\Users\\Gayatri\\OneDrive\\Desktop\\sna\\results\\05_nearest_neighbor_review.csv"
+}

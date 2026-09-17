@@ -1,0 +1,51 @@
+column,dtype_after_cleaning,role,use_as_feature_now,reason
+encounter_id,int64,identifier,False,Required for record/patient identification; never a similarity feature.
+patient_nbr,int64,identifier,False,Required for record/patient identification; never a similarity feature.
+race,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+gender,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+age,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+weight,string,excluded,False,Excluded from candidate features because missingness is >= 90%; retained in cleaned encounter table for traceability.
+admission_type_id,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+discharge_disposition_id,int64,review_required,False,Temporal validity depends on the prediction/intervention point; review in Notebook 04 before use.
+admission_source_id,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+time_in_hospital,int64,review_required,False,Temporal validity depends on the prediction/intervention point; review in Notebook 04 before use.
+payer_code,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+medical_specialty,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+num_lab_procedures,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+num_procedures,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+num_medications,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+number_outpatient,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+number_emergency,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+number_inpatient,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+diag_1,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+diag_2,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+diag_3,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+number_diagnoses,int64,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+max_glu_serum,string,excluded,False,Excluded from candidate features because missingness is >= 90%; retained in cleaned encounter table for traceability.
+A1Cresult,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+metformin,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+repaglinide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+nateglinide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+chlorpropamide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glimepiride,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+acetohexamide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glipizide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glyburide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+tolbutamide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+pioglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+rosiglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+acarbose,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+miglitol,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+troglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+tolazamide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+examide,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+citoglipton,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+insulin,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glyburide-metformin,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glipizide-metformin,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+glimepiride-pioglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+metformin-rosiglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+metformin-pioglitazone,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+change,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+diabetesMed,string,candidate_feature,True,Candidate clinical/demographic/context variable; subject to later leakage review.
+readmitted,string,target,False,Outcome variable; retained separately and excluded from feature inputs.

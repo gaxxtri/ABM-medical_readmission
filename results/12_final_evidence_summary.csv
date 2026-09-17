@@ -1,0 +1,6 @@
+evidence_item,value
+risk_network_positive_fraction_across_budget_effect_scenarios,1.0
+risk_network_ci_above_zero_fraction,1.0
+risk_network_ablation_mean_reduction_positive,True
+network_target_stability_scenarios,8
+stochastic_seed_families,5
