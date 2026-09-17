@@ -27,7 +27,7 @@
 
 <div align="center">
 
-## 🎯 The Core Idea
+##  The Core Idea
 
 ### Can the structure of a clinical patient similarity network be combined with Agent-Based Modelling to understand readmission risk and evaluate targeted intervention strategies?
 
@@ -313,7 +313,7 @@ The pipeline therefore separates:
 
 ---
 
-## 🧬 Patient Representation
+##  Patient Representation
 
 The patient representation combines multiple dimensions of healthcare utilization and clinical information.
 
@@ -350,7 +350,7 @@ The resulting representation contains:
 
 ---
 
-## 🧬 Similarity Methodology
+##  Similarity Methodology
 
 The primary similarity metric is:
 
@@ -373,7 +373,7 @@ The project also evaluates similarity stability against alternative distance-bas
 
 ---
 
-## 🔗 Patient Similarity Network
+##  Patient Similarity Network
 
 The primary network uses:
 
@@ -412,7 +412,7 @@ without constructing an infeasible dense all-pairs similarity matrix.
 
 ---
 
-## 🕸️ Network Analysis
+##  Network Analysis
 
 The project extracts structural measures including:
 
@@ -446,7 +446,7 @@ A label-propagation sensitivity analysis was also performed to examine structura
 
 ---
 
-## 🤖 Baseline Readmission Model
+##  Baseline Readmission Model
 
 Two baseline models were evaluated:
 
@@ -478,7 +478,7 @@ The classification threshold was selected using the validation set and then froz
 
 ---
 
-## 🎯 Final Test Performance
+##  Final Test Performance
 
 The frozen Random Forest model achieved:
 
@@ -511,7 +511,7 @@ TP =   930
 
 ---
 
-## 🤖 Agent-Based Model
+##  Agent-Based Model
 
 The ABM treats each patient as an individual agent.
 
@@ -792,43 +792,43 @@ The ABM should therefore be interpreted as a **simulation and policy-exploration
 
 ---
 
-## 🎯 Final Research Takeaway
+##  Final Research Takeaway
 
 <div align="center">
 
-### 🏥 Clinical Data
+###  Clinical Data
 
 ⬇️
 
-### 👤 Patient Representation
+###  Patient Representation
 
 ⬇️
 
-### 🧬 Similarity
+###  Similarity
 
 ⬇️
 
-### 🕸️ Network Structure
+###  Network Structure
 
 ⬇️
 
-### 🤖 Readmission Prediction
+###  Readmission Prediction
 
 ⬇️
 
-### 👥 Agent-Based Simulation
+###  Agent-Based Simulation
 
 ⬇️
 
-### 💉 Targeted Intervention
+###  Targeted Intervention
 
 ⬇️
 
-### 🧪 Robustness Evaluation
+###  Robustness Evaluation
 
 ⬇️
 
-## 🔬 Evidence-Based Simulation Framework
+##  Evidence-Based Simulation Framework
 
 </div>
 
@@ -955,21 +955,7 @@ The `results/` directory contains machine-readable evidence generated throughout
 
 ---
 
-## 🖼️ Figures
 
-The `figures/` directory contains the major visual outputs from the analysis, including:
-
-```text
-📈 Readmission model evaluation
-🕸️ Network structure
-👥 Community structure
-💉 Intervention policy comparison
-🎯 Prevented readmission analysis
-🧪 Robustness analysis
-📊 Ablation analysis
-```
-
----
 
 ## 🛠️ Technology Stack
 
@@ -1007,100 +993,3 @@ The pipeline records:
 This allows the analysis to be reproduced and independently inspected.
 
 ---
-
-## 👩‍🔬 Research Workflow
-
-```text
-Question
-   ↓
-Data
-   ↓
-Audit
-   ↓
-Clean
-   ↓
-Represent
-   ↓
-Split
-   ↓
-Engineer
-   ↓
-Build Network
-   ↓
-Analyze Network
-   ↓
-Predict Risk
-   ↓
-Build ABM
-   ↓
-Validate ABM
-   ↓
-Simulate Interventions
-   ↓
-Test Robustness
-   ↓
-Interpret Evidence
-```
-
----
-
-<div align="center">
-
-## 🌱 From Prediction to Simulation
-
-**Prediction asks:**
-*"Who is at risk?"*
-
-**Network analysis asks:**
-*"Who is clinically similar to whom?"*
-
-**Agent-Based Modelling asks:**
-*"What happens when patient-level behaviour is simulated?"*
-
-**Intervention experiments ask:**
-*"How do different targeting strategies behave under the same resource constraint?"*
-
-<br>
-
-### 🏥 → 🧬 → 🕸️ → 🤖 → 💉 → 🔬
-
-### Patient Similarity Network + Agent-Based Modelling for Hospital Readmission
-
-</div>
-
----
-
-## 📜 Project Status
-
-```text
-01 Dataset Audit                  ✅ PASS
-02 Data Cleaning                  ✅ PASS
-03 Patient Representation         ✅ PASS
-04 Leakage-Safe Split             ✅ PASS
-05 Feature Engineering            ✅ PASS
-06 Similarity Network             ✅ PASS
-07 SNA & Communities              ✅ PASS
-08 Readmission Model              ✅ PASS
-09 ABM Design & Calibration       ✅ PASS
-10 ABM Validation                 ✅ PASS
-11 Intervention Experiments       ✅ PASS
-12 Robustness & Final Evaluation  🔬 Final review
-```
-
----
-
-<div align="center">
-
-### 📚 Research Project
-
-**Patient Similarity Network + Agent-Based Modelling for Hospital Readmission**
-
-*Clinical Analytics • Network Science • Machine Learning • Agent-Based Modelling • Intervention Simulation*
-
-<br>
-
-⭐ **Reproducible • Modular • Leakage-Aware • Simulation-Based**
-
-</div>
-```
-
