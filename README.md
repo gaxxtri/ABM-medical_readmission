@@ -1,128 +1,149 @@
 
-````markdown
-# 🏥 Patient Similarity Network + Agent-Based Modelling for Hospital Readmission
 
-<p align="center">
+## 🌟 Project at a Glance
 
-<img src="https://img.shields.io/badge/Domain-Healthcare%20Analytics-red?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Network%20Analysis-NetworkX-green?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Agent%20Based%20Modelling-Mesa-purple?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-
-</p>
-
-<p align="center">
-
-### 🔬 From Clinical Data → Patient Similarity → Network Science → Machine Learning → ABM → Intervention Simulation
-
-</p>
-
----
-
-## 🌟 Project Overview
-
-Hospital readmission is a complex healthcare problem influenced by a combination of clinical characteristics, previous healthcare utilization, diagnosis patterns, medication burden and patient context.
-
-Traditional machine-learning approaches generally treat patients as independent observations.
-
-This project takes a different approach.
-
-> **Can relationships between clinically similar patients be represented as a patient similarity network and integrated with Agent-Based Modelling to evaluate targeted intervention strategies for hospital readmission?**
-
-The project develops an end-to-end computational framework combining:
-
-- 🧹 Clinical data preprocessing
-- 👤 Patient-level representation
-- 🔐 Leakage-controlled machine learning
-- 🧬 Clinical feature engineering
-- 🔗 Patient similarity networks
-- 🕸️ Social Network Analysis techniques
-- 🤖 Readmission prediction
-- 🧑‍💻 Agent-Based Modelling
-- 🎯 Intervention policy simulation
-- 🔬 Robustness and sensitivity analysis
+| 📌 Component                  |               🔢 Result |
+| ----------------------------- | ----------------------: |
+| 🏥 Clinical encounters        |             **101,766** |
+| 👤 Unique patients            |              **71,518** |
+| 📋 Original variables         |                  **50** |
+| 🧬 Candidate patient features |                  **38** |
+| ⚙️ Transformed features       |                  **57** |
+| 🔗 Training network nodes     |              **50,062** |
+| 🔗 Training network edges     |             **434,595** |
+| 🕸️ Primary network           | **Mutual k-NN, k = 10** |
+| 📐 Mean network degree        |               **17.36** |
+| 🔗 Mean edge similarity       |               **0.918** |
+| 👥 Louvain communities        |                 **105** |
+| 📊 Network modularity         |              **0.8652** |
+| 🤖 Final baseline model       |       **Random Forest** |
+| 📈 Test AUROC                 |              **0.8709** |
+| 📈 Test AUPRC                 |              **0.5883** |
+| 🎯 Test F1-score              |              **0.5720** |
+| 🔬 Intervention budget        |                 **10%** |
+| 💉 Intervention policies      |                   **4** |
 
 ---
 
-# 🎯 Problem Statement
+<div align="center">
 
-Hospital readmission is not determined by a single factor.
+## 🎯 The Core Idea
 
-Patients may have different:
+### Can the structure of a clinical patient similarity network be combined with Agent-Based Modelling to understand readmission risk and evaluate targeted intervention strategies?
 
-- clinical conditions
-- healthcare utilization histories
-- medication burdens
-- diagnosis and procedure patterns
-- demographic characteristics
-- relationships to other clinically similar patients
-
-A conventional predictive model can estimate the probability of readmission for an individual patient.
-
-However, it does not explicitly represent the **structural relationships between clinically similar patients**.
-
-Therefore, this project investigates:
-
-> **How can a clinical patient similarity network be combined with readmission prediction and Agent-Based Modelling to evaluate targeted intervention strategies?**
+</div>
 
 ---
 
-# ❓ Research Question
+##  Why This Project?
 
-### Main Research Question
+Hospital readmission is influenced by multiple interacting clinical and utilization characteristics.
 
-> **How does the structure of a clinical patient similarity network contribute to the simulation and evaluation of targeted interventions for hospital readmission?**
+Traditional predictive modelling answers:
+
+> **"Which patients are at higher risk?"**
+
+This project asks an additional question:
+
+> **"How does the position of a patient within a clinical similarity network change how we understand and simulate intervention strategies?"**
+
+The framework therefore combines:
+
+```text
+Clinical Data
+     +
+Patient Similarity
+     +
+Network Structure
+     +
+Machine Learning
+     +
+Agent-Based Modelling
+     +
+Intervention Experiments
+     =
+Evidence-Based Simulation Framework
+```
+
+---
+
+##  Problem Statement
+
+Hospital readmission represents an important healthcare analytics problem because patients can differ substantially in their clinical characteristics, healthcare utilization patterns, and similarity to other patients.
+
+A conventional predictive model treats patients largely as independent observations.
+
+However, patients may form **groups of clinically similar individuals**.
+
+This project constructs a **patient similarity network**, where:
+
+* **Node** = patient
+*  **Edge** = clinical similarity between two patients
+*  **Edge weight** = strength of similarity
+*  **Community** = group of structurally similar patients
+
+The resulting network is then combined with a readmission model and an Agent-Based Model to simulate intervention strategies under a fixed resource budget.
+
+> **Important:** This is a **clinical patient similarity network**, not an observed social network. The dataset does not contain real-world social relationships between patients.
+
+---
+
+##  Research Question
+
+> **How can patient similarity network structure be integrated with Agent-Based Modelling to identify high-priority patient groups and evaluate targeted intervention strategies for hospital readmission?**
 
 ### Supporting Questions
 
-1. Can encounter-level clinical data be transformed into reliable patient-level representations?
-2. Can clinically similar patients be connected without using the readmission outcome?
-3. What structural patterns exist within the resulting patient similarity network?
+1. Can patients be represented consistently at the patient level?
+2. Can a leakage-safe clinical similarity network be constructed?
+3. What structural patterns and communities emerge?
 4. How accurately can readmission risk be predicted?
-5. Can an Agent-Based Model reproduce observed validation-population behaviour?
-6. How do random, risk-based and network-informed targeting strategies behave under an equal intervention budget?
-7. How robust are the results to network construction, intervention effectiveness and stochasticity?
+5. Can an ABM reproduce observed validation-level readmission behaviour?
+6. How do different intervention policies behave under the same intervention budget?
+7. How sensitive are the results to network construction, intervention effectiveness, and stochasticity?
 
 ---
 
-# 📊 Dataset
+<div align="center">
 
-## Diabetes 130-US Hospitals for Years 1999–2008
+## 🗂️ Dataset
+
+### Diabetes 130-US Hospitals for Years 1999–2008
+
+</div>
 
 The project uses the **Diabetes 130-US Hospitals for Years 1999–2008** dataset.
 
-The original data is encounter-level clinical data from diabetic patients across US hospitals.
+### Dataset characteristics
 
-### Dataset at a Glance
+```text
+101,766 encounters
+        │
+        ▼
+71,518 unique patients
+        │
+        ▼
+50 original variables
+        │
+        ▼
+Patient-level analytical representation
+```
 
-| Property | Value |
-|---|---:|
-| 🏥 Hospital encounters | **101,766** |
-| 👤 Unique patients | **71,518** |
-| 📊 Variables | **50** |
-| 🧾 Unique encounter IDs | **101,766** |
-| 🔁 Exact duplicate rows | **0** |
-| 📅 Dataset period | **1999–2008** |
+### Original Readmission Distribution
 
----
+| Category | Meaning                    | Encounters |
+| -------- | -------------------------- | ---------: |
+| `NO`     | No observed readmission    | **54,864** |
+| `>30`    | Readmission after 30 days  | **35,545** |
+| `<30`    | Readmission within 30 days | **11,357** |
 
-# 📈 Original Readmission Distribution
+### Primary Patient-Level Target
 
-The original dataset contains three readmission categories:
-
-| Category | Meaning | Encounters |
-|---|---|---:|
-| `NO` | No observed readmission | **54,864** |
-| `>30` | Readmission after 30 days | **35,545** |
-| `<30` | Readmission within 30 days | **11,357** |
-
-The primary project target is constructed at the patient level as:
+The primary target used in the project is:
 
 ```text
 any_observed_readmission_under_30d
-````
+```
 
 A patient receives:
 
@@ -134,636 +155,699 @@ A patient receives:
 
 ---
 
-# 👤 Why Patient-Level Aggregation?
+##  Why Patient-Level Aggregation?
 
-The original dataset contains **encounters**, not one row per patient.
+The original dataset is **encounter-level**.
 
-Therefore, the same patient can appear multiple times.
-
-For example:
+Therefore:
 
 ```text
-Raw Encounter Data
-
-Patient A ── Encounter 1
-          ── Encounter 2
-          ── Encounter 3
-
-Patient B ── Encounter 4
-          ── Encounter 5
-
-Patient C ── Encounter 6
+One patient
+     │
+     ├── Encounter 1
+     ├── Encounter 2
+     ├── Encounter 3
+     └── ...
 ```
 
-These records are transformed into:
+would otherwise appear as multiple observations.
+
+The project therefore aggregates encounters by:
 
 ```text
-Patient-Level Representation
-
-Patient A → Clinical + Utilization Profile
-Patient B → Clinical + Utilization Profile
-Patient C → Clinical + Utilization Profile
+patient_nbr
 ```
 
-This is essential because the network is defined as:
+to produce:
 
-> **Patient → Patient**
+```text
+One patient → One analytical representation
+```
 
-rather than:
+This makes the patient the fundamental unit for:
 
-> **Encounter → Encounter**
+* similarity
+* network construction
+* SNA
+* prediction
+* ABM
+* intervention simulation
 
 ---
 
-# 🏗️ Complete Project Pipeline
+##  Leakage-Control Strategy
 
-```mermaid
-flowchart TD
+A major design principle of the project is:
 
-A["🏥 Diabetes Hospital Dataset<br/>101,766 Encounters"] 
---> B["01 🔍 Dataset Audit"]
+> **Information used to define the target must not be allowed to define patient similarity or influence model fitting improperly.**
 
-B --> C["02 🧹 Data Cleaning<br/>& Variable Dictionary"]
+The pipeline therefore separates:
 
-C --> D["03 👤 Patient-Level<br/>Representation"]
-
-D --> E["04 🔐 Target Definition<br/>& Leakage-Safe Split"]
-
-E --> F["05 🧬 Feature Engineering<br/>& Similarity Representation"]
-
-F --> G["06 🔗 Patient Similarity<br/>Network"]
-
-G --> H["07 🕸️ SNA &<br/>Community Detection"]
-
-F --> I["08 🤖 Baseline<br/>Readmission Model"]
-
-H --> J["09 🧑‍💻 ABM Design<br/>& Calibration"]
-
-I --> J
-
-J --> K["10 🧪 ABM Validation"]
-
-K --> L["11 🎯 Intervention<br/>Experiments"]
-
-L --> M["12 🔬 Robustness,<br/>Ablation & Sensitivity"]
-
-M --> N["📊 Final Evidence"]
-
-N --> O["🎓 Research Takeaway"]
+```text
+                    ┌──────────────────────┐
+                    │   Patient Dataset    │
+                    └──────────┬───────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 ▼                           ▼
+        Clinical Features             Readmission Target
+                 │                           │
+                 ▼                           │
+       Similarity / Network                 │
+                 │                           │
+                 ▼                           │
+              SNA                           │
+                 │                           │
+                 └──────────────┬────────────┘
+                                ▼
+                         ABM / Evaluation
 ```
 
----
+### Leakage safeguards
 
-# 🧭 Notebook-by-Notebook Workflow
+* Patient-level split
+* No patient overlap between train/validation/test
+* Readmission target excluded from similarity features
+* Patient identifier excluded from similarity features
+* Feature preprocessing fitted on training data
+* Test data kept untouched until final evaluation
+* Intervention experiments performed on validation population
+* Observed outcomes not used to select intervention targets
+* Equal intervention budget across targeted policies
 
-| Notebook                              | Stage             | Main Purpose                          |
-| ------------------------------------- | ----------------- | ------------------------------------- |
-| `01_dataset_audit.ipynb`              | 🔍 Audit          | Dataset integrity and reproducibility |
-| `02_cleaning.ipynb`                   | 🧹 Cleaning       | Missing values and variable selection |
-| `03_patient_representation.ipynb`     | 👤 Representation | Encounter → patient transformation    |
-| `04_split_leakage_check.ipynb`        | 🔐 Leakage        | Target definition and patient split   |
-| `05_features_similarity.ipynb`        | 🧬 Features       | Feature engineering and similarity    |
-| `06_similarity_network.ipynb`         | 🔗 Network        | Patient similarity network            |
-| `07_sna_communities.ipynb`            | 🕸️ SNA           | Centrality and communities            |
-| `08_baseline_readmission_model.ipynb` | 🤖 ML             | Readmission prediction                |
-| `09_abm_design_calibration.ipynb`     | 🧑‍💻 ABM         | ABM design and calibration            |
-| `10_abm_validation.ipynb`             | 🧪 Validation     | Validate ABM against observations     |
-| `11_intervention_experiments.ipynb`   | 🎯 Intervention   | Policy experiments                    |
-| `12_robustness_final.ipynb`           | 🔬 Robustness     | Sensitivity and ablation              |
+### Split
 
----
-
-# 🔐 Leakage-Control Strategy
-
-A central methodological requirement is preventing information leakage.
-
-```mermaid
-flowchart LR
-
-A["👥 71,518 Patients"]
---> B["🔐 Patient-Level Split"]
-
-B --> C["TRAIN<br/>50,062"]
-
-B --> D["VALIDATION<br/>10,728"]
-
-B --> E["TEST<br/>10,728"]
-
-C --> F["🧠 Fit Preprocessing"]
-C --> G["🤖 Train Models"]
-C --> H["🔗 Build Primary Network"]
-
-D --> I["🧪 Validation<br/>Model + ABM"]
-
-E --> J["🔒 Final Test<br/>Evaluation"]
-```
-
-### Leakage Controls
-
-* ✅ Patient-level splitting
-* ✅ No patient overlap between splits
-* ✅ Similarity preprocessing fitted on training data
-* ✅ Readmission outcome excluded from similarity construction
-* ✅ Patient identifiers excluded from feature matrices
-* ✅ Test data not used for model selection
-* ✅ Classification threshold selected using validation data
-* ✅ Final test evaluation performed after model selection
-
-### Split Sizes
-
-| Split         |   Patients |
+| Partition     |   Patients |
 | ------------- | ---------: |
-| 🧠 Training   | **50,062** |
-| 🧪 Validation | **10,728** |
-| 🔒 Test       | **10,728** |
+| 🟦 Training   | **50,062** |
+| 🟨 Validation | **10,728** |
+| 🟥 Test       | **10,728** |
 | **Total**     | **71,518** |
 
+> The dataset does not contain a reliable encounter timestamp suitable for a strict temporal split. Therefore, the project uses a reproducible patient-level random split and explicitly documents this limitation.
+
 ---
 
-# 🧬 Patient Representation
+## ⚙️ Complete 01 → 12 Methodology
 
-Patient-level representation combines clinical and utilization information.
-
-Representative feature groups include:
+<div align="center">
 
 ```text
-Clinical characteristics
-        │
-        ├── Demographics
-        ├── Diagnosis burden
-        ├── Procedure burden
-        ├── Medication burden
-        │
-        └── Healthcare utilization
-                ├── Inpatient
-                ├── Emergency
-                └── Outpatient
+01
+📋 Dataset Audit
+      ↓
+02
+🧹 Cleaning & Variable Dictionary
+      ↓
+03
+👤 Patient Representation
+      ↓
+04
+🔒 Target Definition & Leakage-Safe Split
+      ↓
+05
+⚙️ Feature Engineering & Similarity Representation
+      ↓
+06
+🔗 Patient Similarity Network
+      ↓
+07
+🕸️ SNA & Community Detection
+      ↓
+08
+🤖 Baseline Readmission Model
+      ↓
+09
+🧠 ABM Design & Calibration
+      ↓
+10
+🔬 ABM Validation
+      ↓
+11
+💉 Intervention Experiments
+      ↓
+12
+🧪 Robustness, Ablation & Final Evaluation
+```
+
+</div>
+
+---
+
+## 📓 Notebook Structure
+
+| Notebook                              | Purpose                                           |
+| ------------------------------------- | ------------------------------------------------- |
+| `01_dataset_audit.ipynb`              | Dataset integrity and reproducibility audit       |
+| `02_cleaning.ipynb`                   | Missing values, cleaning and variable selection   |
+| `03_patient_representation.ipynb`     | Encounter → patient representation                |
+| `04_split_leakage_check.ipynb`        | Target definition and patient-level split         |
+| `05_features_similarity.ipynb`        | Feature engineering and similarity representation |
+| `06_similarity_network.ipynb`         | Patient similarity network construction           |
+| `07_sna_communities.ipynb`            | Centrality and community analysis                 |
+| `08_baseline_readmission_model.ipynb` | Readmission prediction                            |
+| `09_abm_design_calibration.ipynb`     | ABM design and calibration                        |
+| `10_abm_validation.ipynb`             | Validation against observed outcomes              |
+| `11_intervention_experiments.ipynb`   | Intervention policy simulation                    |
+| `12_robustness_final.ipynb`           | Robustness, ablation and final evidence           |
+
+---
+
+## 🧬 Patient Representation
+
+The patient representation combines multiple dimensions of healthcare utilization and clinical information.
+
+### Representation dimensions
+
+```text
+🏥 Healthcare Utilization
+       │
+       ├── Encounter counts
+       ├── Inpatient utilization
+       ├── Emergency utilization
+       └── Outpatient utilization
+
+💊 Clinical Complexity
+       │
+       ├── Medication burden
+       ├── Diagnosis burden
+       └── Procedure burden
+
+👤 Demographic / Contextual Variables
+       │
+       ├── Age
+       ├── Gender
+       └── Other available context
+```
+
+The resulting representation contains:
+
+```text
+38 candidate features
+        ↓
+57 transformed features
 ```
 
 ---
 
-# 🧮 Feature Engineering
+## 🧬 Similarity Methodology
 
-Notebook 05 produced:
+The primary similarity metric is:
 
-| Feature Type         |  Count |
-| -------------------- | -----: |
-| Candidate features   | **38** |
-| Numeric features     | **32** |
-| Categorical features |  **6** |
-| Transformed features | **57** |
+### Cosine Similarity
 
-The feature transformation pipeline was fitted using the training population and subsequently applied to validation and test populations.
+For two patient vectors:
 
----
+```text
+A = patient A feature vector
+B = patient B feature vector
 
-# 🔗 Patient Similarity Network
-
-The project constructs a:
-
-## **Clinical Patient Similarity Network**
-
-⚠️ This is **not a social network**.
-
-A node represents a patient.
-
-An edge represents clinical similarity.
-
-The edge weight represents similarity strength.
-
-```mermaid
-flowchart TD
-
-A["👤 Patient Feature Vector"]
---> B["📏 Cosine Similarity"]
-
-B --> C["🔎 k-Nearest Neighbours"]
-
-C --> D["🤝 Mutual-kNN Filtering"]
-
-D --> E["⚖️ Weighted Similarity Edges"]
-
-E --> F["🔗 Clinical Patient Similarity Network"]
-
-F --> G["🕸️ Network Analysis"]
-
-F --> H["🧩 Community Detection"]
+cosine(A,B)
+=
+(A · B) / (||A|| ||B||)
 ```
 
+Higher similarity indicates that the two patients have more similar analytical representations.
+
+The project also evaluates similarity stability against alternative distance-based representations.
+
 ---
 
-# 📊 Primary Network Results
+## 🔗 Patient Similarity Network
 
 The primary network uses:
 
 ```text
-Similarity metric = Cosine similarity
-Network rule      = Mutual k-nearest neighbours
-k                 = 10
+Similarity Metric : Cosine
+Network Rule      : Mutual k-NN
+k                 : 10
+Population        : Training patients only
 ```
 
 ### Network Statistics
 
-| Measure                       |        Result |
-| ----------------------------- | ------------: |
-| 👤 Nodes                      |    **50,062** |
-| 🔗 Edges                      |   **434,595** |
-| 🎯 k                          |        **10** |
-| 📉 Density                    | **0.0003468** |
-| 📊 Mean degree                |     **17.36** |
-| 📊 Median degree              |        **18** |
-| ⚖️ Mean edge weight           |    **0.9184** |
-| ⚖️ Median edge weight         |    **0.9260** |
-| 🧩 Connected components       |        **82** |
-| 🌐 Largest component fraction |    **98.33%** |
+| Metric               |               Value |
+| -------------------- | ------------------: |
+| Nodes                |          **50,062** |
+| Edges                |         **434,595** |
+| Density              |       **0.0003468** |
+| Mean degree          |           **17.36** |
+| Median degree        |              **18** |
+| Mean edge weight     |          **0.9184** |
+| Median edge weight   |          **0.9260** |
+| Connected components |              **82** |
+| Largest component    | **98.33%** of nodes |
+| Isolated nodes       |              **77** |
 
-The network is sparse in terms of overall density while most patients belong to one large connected component.
+### Interpretation
+
+The network is sparse relative to a fully connected graph, while the largest connected component contains the overwhelming majority of training patients.
+
+This allows the project to study both:
+
+* individual patient structural position
+* group/community structure
+
+without constructing an infeasible dense all-pairs similarity matrix.
 
 ---
 
-# 🕸️ Social Network Analysis
+## 🕸️ Network Analysis
 
-Network structure was analysed using:
+The project extracts structural measures including:
 
 * Degree
 * Weighted degree / strength
 * Betweenness centrality
-* Closeness centrality
+* Closeness approximation
 * Eigenvector centrality
 * Connected components
-* Community structure
+* Community membership
 
-Approximation methods were used for computationally expensive centrality measures where appropriate.
+### Community Detection
 
----
+Primary method:
 
-# 🧩 Community Detection
+**Weighted Louvain**
 
-Primary community detection:
-
-> **Weighted Louvain**
-
-### Results
-
-| Measure                |             Result |
-| ---------------------- | -----------------: |
-| 🧩 Communities         |            **105** |
-| 🏘️ Largest community  | **6,767 patients** |
-| 📐 Weighted modularity |         **0.8652** |
-
-A label-propagation sensitivity analysis was also performed.
-
----
-
-# 🧠 Network Information
-
-The network allows the project to represent:
+Results:
 
 ```text
-Patient
-   │
-   ├── Clinical profile
-   ├── Predicted risk
-   ├── Similar patients
-   ├── Degree
-   ├── Weighted degree
-   ├── Centrality
-   └── Community membership
+105 communities
+
+Largest community:
+6,767 patients
+
+Weighted modularity:
+0.8652
 ```
 
-This network context becomes an additional source of information for the ABM intervention experiments.
+A label-propagation sensitivity analysis was also performed to examine structural dependence on the community detection method.
 
 ---
 
-# 🤖 Baseline Readmission Model
+## 🤖 Baseline Readmission Model
 
-Two baseline predictive models were evaluated:
+Two baseline models were evaluated:
 
-### 1. Logistic Regression
+```text
+                    Readmission Prediction
+                             │
+              ┌──────────────┴──────────────┐
+              ▼                             ▼
+      Logistic Regression             Random Forest
+              │                             │
+              └──────────────┬──────────────┘
+                             ▼
+                    Validation Comparison
+                             │
+                             ▼
+                      Model Selection
+```
 
-### 2. Random Forest
-
-Model selection was performed using the validation population.
-
-The predefined primary model-selection metric was:
-
-> **Validation AUPRC**
-
----
-
-# 📈 Model Comparison
-
-### Validation Performance
+### Validation Results
 
 | Model               |      AUROC |      AUPRC |  Brier |
 | ------------------- | ---------: | ---------: | -----: |
 | Logistic Regression |     0.8708 |     0.5770 | 0.0751 |
 | Random Forest       | **0.8770** | **0.5933** | 0.1203 |
-| Prevalence baseline |     0.5000 |     0.1235 | 0.1083 |
 
-The Random Forest was selected according to the predefined validation-AUPRC criterion.
+The Random Forest was selected using **validation AUPRC**.
+
+The classification threshold was selected using the validation set and then frozen before evaluating the test set.
 
 ---
 
-# 🏆 Final Test Performance
+## 🎯 Final Test Performance
 
-After model and threshold selection were completed using the training/validation workflow, the held-out test population was evaluated.
+The frozen Random Forest model achieved:
 
-| Metric      | Final Test Result |
-| ----------- | ----------------: |
-| ROC-AUC     |        **0.8709** |
-| PR-AUC      |        **0.5883** |
-| Brier Score |        **0.1224** |
-| Accuracy    |        **0.8702** |
-| Precision   |        **0.4826** |
-| Recall      |        **0.7019** |
-| F1-score    |        **0.5720** |
+| Metric          | Test Result |
+| --------------- | ----------: |
+| **AUROC**       |  **0.8709** |
+| **AUPRC**       |  **0.5883** |
+| **Brier Score** |  **0.1224** |
+| Accuracy        |  **0.8702** |
+| Precision       |  **0.4826** |
+| Recall          |  **0.7019** |
+| F1-score        |  **0.5720** |
 
-### Selected Classification Threshold
+### Confusion Matrix
 
 ```text
-Threshold = 0.70
+                    Predicted
+                  0          1
+              ┌────────┬────────┐
+Actual   0    │  8,406 │    997 │
+              ├────────┼────────┤
+         1    │    395 │    930 │
+              └────────┴────────┘
+
+TN = 8,406
+FP =   997
+FN =   395
+TP =   930
 ```
 
 ---
 
-# 📊 Confusion Matrix
+## 🤖 Agent-Based Model
+
+The ABM treats each patient as an individual agent.
+
+### Agent State
 
 ```text
-                         Predicted
-                       0          1
-                    -----------------
-Actual 0          | 8406 |      997 |
-                    -----------------
-Actual 1          |  395 |      930 |
-                    -----------------
+┌─────────────────────────────────┐
+│          Patient Agent          │
+├─────────────────────────────────┤
+│ Patient ID                      │
+│ Baseline readmission risk       │
+│ Utilization / clinical state    │
+│ Network position                │
+│ Community membership            │
+│ Intervention state              │
+│ Outcome state                   │
+└─────────────────────────────────┘
 ```
 
-Therefore:
+### Transition Mechanism
+
+The basic transition probability is represented as:
 
 ```text
-True Negatives  = 8406
-False Positives = 997
-False Negatives = 395
-True Positives  = 930
-```
-
----
-
-# 🧑‍💻 Agent-Based Model
-
-The ABM represents patients as computational agents.
-
-Each agent has a state representing the patient's simulated clinical/readmission situation.
-
-```mermaid
-flowchart TD
-
-A["👤 Patient Agent"]
-
-A --> B["🧬 Clinical Representation"]
-A --> C["📈 Baseline Readmission Risk"]
-A --> D["🔗 Network Position"]
-A --> E["🧩 Community"]
-A --> F["🎯 Intervention State"]
-A --> G["🏥 Outcome State"]
-
-B --> H["🤖 ABM Transition Mechanism"]
-C --> H
-D --> H
-E --> H
-F --> H
-
-H --> I["🎲 Stochastic Simulation"]
-
-I --> J["Stable"]
-I --> K["Readmitted"]
-```
-
----
-
-# 🔄 ABM Transition Mechanism
-
-The ABM follows a probabilistic transition mechanism:
-
-```text
-Baseline Risk
-      │
-      ▼
+P(readmission)
+        │
+        ▼
+Baseline Patient Risk
+        │
+        ▼
 Calibration
-      │
-      ▼
-Transition Probability
-      │
-      ▼
+        │
+        ▼
+Intervention Effect
+        │
+        ▼
+Final Transition Probability
+        │
+        ▼
 Random Draw
-      │
- ┌────┴────┐
- ▼         ▼
-Stable   Readmitted
+        │
+        ├──── probability crossed ────► 🔴 Readmitted
+        │
+        └──── probability not crossed ► 🟢 Stable
 ```
 
-The simulation introduces stochasticity while preserving the underlying patient-specific risk structure.
+The ABM is designed as a **probabilistic simulation**, rather than a deterministic rule.
 
 ---
 
-# 🧪 ABM Validation
+## 🔬 ABM Validation
 
-The ABM is evaluated against the observed validation population.
+Notebook 10 evaluates whether the ABM produces simulated behaviour that is consistent with the observed validation population.
 
-### Validation population
-
-**10,728 patients**
-
-The validation simulation uses the same patient population as the observed validation dataset.
-
-The observed readmission outcome is used for **evaluation**, not to construct the similarity network or define the simulation transition rule.
-
----
-
-# 🎯 Intervention Experiments
-
-Notebook 11 evaluates four intervention policies:
-
-| Policy                 | Description                            |
-| ---------------------- | -------------------------------------- |
-| ⚪ `no_intervention`    | No intervention                        |
-| 🎲 `random`            | Randomly selected patients             |
-| 📈 `risk_based`        | Highest-risk patients targeted         |
-| 🕸️ `network_informed` | Risk combined with network information |
-
----
-
-# ⚖️ Equal Intervention Budget
-
-To ensure a fair comparison, all targeted policies receive the same intervention budget.
-
-### Validation population
+The validation process compares:
 
 ```text
+Observed patient outcome
+          VS
+Simulated patient outcome
+```
+
+while preserving the same validation population.
+
+The ABM validation stage is kept separate from intervention experiments so that intervention results are not confused with baseline model validation.
+
+---
+
+## 💉 Intervention Experiments
+
+Notebook 11 evaluates four policies:
+
+```text
+1️⃣ No Intervention
+2️⃣ Random
+3️⃣ Risk-Based
+4️⃣ Network-Informed
+```
+
+### Equal Resource Constraint
+
+All targeted policies receive the same intervention budget:
+
+```text
+Validation population
+       │
+       ▼
 10,728 patients
+       │
+       ▼
+10% intervention budget
+       │
+       ▼
+1,073 intervention targets
 ```
 
-### Intervention budget
+This ensures that policy comparisons are based on different **targeting strategies**, rather than different numbers of interventions.
+
+---
+
+## 🧠 Network-Informed Targeting
+
+The network-informed policy incorporates information from:
 
 ```text
-10%
+Patient Risk
+      +
+Network Structure
+      +
+Community Context
+      ↓
+Network-Informed Target Score
 ```
 
-### Targeted patients
+This allows the experiment to investigate whether network structure provides information beyond individual risk alone.
+
+---
+
+## 🔬 Robustness Analysis
+
+Notebook 12 examines whether conclusions are sensitive to modelling choices.
+
+### Robustness dimensions
 
 ```text
-1,073
+             Robustness
+                 │
+     ┌───────────┼───────────┐
+     ▼           ▼           ▼
+Network-k    Intervention   Effect
+Sensitivity    Budget       Size
+     │           │           │
+     └───────────┼───────────┘
+                 ▼
+          Stochasticity
+                 │
+                 ▼
+             Ablation
 ```
 
-```mermaid
-flowchart LR
+### Network Sensitivity
 
-A["🧑‍🤝‍🧑 10,728 Validation Patients"]
+The project evaluates alternative network `k` values rather than assuming that `k=10` is universally optimal.
 
-A --> B["⚖️ 10% Intervention Budget"]
-
-B --> C["1,073 Targeted Patients"]
-B --> D["9,655 Untargeted Patients"]
-
-C --> E["🎲 Random"]
-C --> F["📈 Risk-Based"]
-C --> G["🕸️ Network-Informed"]
-```
-
-This equal-resource design ensures that the policies are compared under the same intervention capacity.
+The purpose is to determine whether network-based findings remain structurally consistent under reasonable network construction changes.
 
 ---
 
-# 🎯 Intervention Experiment Framework
+## 🧪 Ablation Analysis
 
-```mermaid
-flowchart TD
+Ablation experiments remove selected components from the modelling framework to examine their contribution.
 
-A["10,728 Validation Patients"]
---> B["Risk + Network Information"]
-
-B --> C["🎲 Random Policy"]
-B --> D["📈 Risk-Based Policy"]
-B --> E["🕸️ Network-Informed Policy"]
-
-C --> F["🤖 ABM Simulation"]
-D --> F
-E --> F
-
-F --> G["🏥 Simulated Outcomes"]
-
-G --> H["📊 Readmission Rate"]
-G --> I["🛡️ Prevented Readmissions"]
-G --> J["📐 Uncertainty"]
-```
-
----
-
-# 📊 Intervention Results
-
-The intervention experiments use repeated stochastic simulations.
-
-Main outputs are stored in:
+Conceptually:
 
 ```text
-results/11_intervention_policy_summary.csv
-results/11_intervention_replication_results.csv
-results/11_paired_policy_comparisons.csv
-results/11_target_selection_audit.csv
-results/11_intervention_config.json
-results/11_validation_network_nodes.csv
-results/11_validation_similarity_edges_k10.csv
+Full Framework
+      │
+      ├── Remove Network Information
+      │
+      ├── Remove Community Information
+      │
+      ├── Alter Risk Component
+      │
+      └── Compare Result
 ```
 
-Main figures:
+This helps distinguish:
+
+> **What the complete framework does**
+
+from:
+
+> **What individual components contribute.**
+
+---
+
+## 🎲 Stochasticity & Uncertainty
+
+Because the ABM contains probabilistic transitions, different random seeds can produce different individual-level outcomes.
+
+Therefore the project evaluates:
+
+* repeated simulations
+* seed sensitivity
+* mean outcomes
+* uncertainty intervals
+* intervention-effect variation
+
+The goal is to avoid interpreting a single simulation run as definitive evidence.
+
+---
+
+## 📊 Evidence Chain
+
+The project follows this evidence hierarchy:
 
 ```text
-figures/11_intervention_policy_comparison.png
-figures/11_prevented_readmissions.png
+DATA QUALITY
+     ↓
+PATIENT REPRESENTATION
+     ↓
+LEAKAGE CONTROL
+     ↓
+SIMILARITY NETWORK
+     ↓
+NETWORK STRUCTURE
+     ↓
+READMISSION PREDICTION
+     ↓
+ABM CALIBRATION
+     ↓
+ABM VALIDATION
+     ↓
+INTERVENTION EXPERIMENTS
+     ↓
+ROBUSTNESS / ABLATION
+     ↓
+FINAL EVIDENCE
 ```
 
-These outputs contain:
-
-* policy-level summaries
-* replication-level results
-* paired policy comparisons
-* target-selection audits
-* intervention configuration
-* validation network information
+Each stage depends on the validity of the previous stage.
 
 ---
 
-# 🔬 Robustness Analysis
+## 🔬 Methodological Contribution
 
-The final notebook evaluates whether the observed simulation behaviour is sensitive to modelling assumptions.
+The project integrates several analytical perspectives into one reproducible framework:
 
-The robustness analysis includes:
+| Layer                  | Method                                 |
+| ---------------------- | -------------------------------------- |
+| 🏥 Clinical analytics  | Patient-level representation           |
+| 🧬 Similarity learning | Cosine similarity                      |
+| 🔗 Network science     | Mutual k-NN graph                      |
+| 🕸️ SNA                | Centrality + community detection       |
+| 🤖 Machine learning    | Readmission prediction                 |
+| 👥 ABM                 | Patient-level stochastic simulation    |
+| 💉 Policy simulation   | Intervention targeting                 |
+| 🧪 Robustness          | Sensitivity + ablation + stochasticity |
 
-### 🔗 Network-k sensitivity
+The key methodological contribution is the integration of:
 
-Examines changes under different network neighbourhood sizes.
-
-### 💰 Budget sensitivity
-
-Examines different intervention-resource assumptions.
-
-### 🎯 Effect-size sensitivity
-
-Examines different intervention-effect assumptions.
-
-### 🎲 Stochasticity
-
-Repeats simulations using different random seeds.
-
-### 🧩 Ablation analysis
-
-Examines the contribution of network-related components.
-
----
-
-# 🛡️ Robustness Framework
-
-```mermaid
-flowchart TD
-
-A["🎯 Primary Intervention Results"]
-
-A --> B["🔗 Network-k Sensitivity"]
-
-A --> C["💰 Intervention Budget Sensitivity"]
-
-A --> D["🎯 Intervention Effect Sensitivity"]
-
-A --> E["🎲 Stochasticity / Seeds"]
-
-A --> F["🧩 Ablation Analysis"]
-
-B --> G["🔬 Robustness Evidence"]
-C --> G
-D --> G
-E --> G
-F --> G
-
-G --> H["📊 Final Evidence Summary"]
+```text
+Patient Similarity
+        +
+Network Structure
+        +
+Readmission Risk
+        +
+Agent-Based Simulation
+        +
+Resource-Constrained Intervention
 ```
 
+into a single experimental pipeline.
+
 ---
 
-# 📁 Repository Structure
+## ⚠️ What This Project Can and Cannot Conclude
+
+### ✅ The project can investigate
+
+* Whether patients can be represented consistently at patient level.
+* The structural properties of a clinical similarity network.
+* The existence of clinically similar patient communities.
+* Predictive performance for observed readmission.
+* How simulated intervention policies behave under controlled assumptions.
+* Sensitivity of simulation results to modelling choices.
+
+### ❌ The project cannot establish
+
+* That network proximity represents actual social relationships.
+* That an intervention would causally reduce readmission in a real hospital.
+* That simulated intervention effects automatically translate to clinical effectiveness.
+* That the model is temporally validated when no reliable encounter timestamp is available.
+* That network structure itself causes readmission.
+
+The ABM should therefore be interpreted as a **simulation and policy-exploration framework**, not as a clinical deployment system.
+
+---
+
+## 🎯 Final Research Takeaway
+
+<div align="center">
+
+### 🏥 Clinical Data
+
+⬇️
+
+### 👤 Patient Representation
+
+⬇️
+
+### 🧬 Similarity
+
+⬇️
+
+### 🕸️ Network Structure
+
+⬇️
+
+### 🤖 Readmission Prediction
+
+⬇️
+
+### 👥 Agent-Based Simulation
+
+⬇️
+
+### 💉 Targeted Intervention
+
+⬇️
+
+### 🧪 Robustness Evaluation
+
+⬇️
+
+## 🔬 Evidence-Based Simulation Framework
+
+</div>
+
+The project demonstrates a complete analytical workflow connecting **clinical data, patient similarity, network science, machine learning, and agent-based intervention simulation**.
+
+The final interpretation should focus on the evidence produced by the pipeline and the assumptions required to generate the simulated outcomes.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 ABM-medical_readmission/
 │
-├── 📄 README.md
-├── 📄 ABM_SNA_Proposal.docx
-│
-├── 📂 diabetes+130-us+hospitals+for+years+1999-2008/
+├── 🏥 diabetes+130-us+hospitals+for+years+1999-2008/
 │   ├── diabetic_data.csv
 │   └── IDS_mapping.csv
 │
-├── 📂 notebooks/
-│   │
+├── 📓 notebooks/
 │   ├── 01_dataset_audit.ipynb
 │   ├── 02_cleaning.ipynb
 │   ├── 03_patient_representation.ipynb
@@ -776,485 +860,247 @@ ABM-medical_readmission/
 │   ├── 10_abm_validation.ipynb
 │   ├── 11_intervention_experiments.ipynb
 │   ├── 12_robustness_final.ipynb
-│   │
-│   └── 📊 ABM_SNA_Final_Presentation.ipynb
+│   └── ABM_SNA_Final_Presentation.ipynb
 │
-├── 📂 results/
-│   ├── 01_*
-│   ├── 02_*
-│   ├── 03_*
-│   ├── 04_*
-│   ├── 05_*
-│   ├── 06_*
-│   ├── 07_*
-│   ├── 08_*
-│   ├── 09_*
-│   ├── 10_*
-│   ├── 11_*
-│   └── 12_*
+├── 📊 results/
+│   ├── Dataset audit outputs
+│   ├── Patient representations
+│   ├── Feature matrices
+│   ├── Network outputs
+│   ├── SNA outputs
+│   ├── Prediction outputs
+│   ├── ABM outputs
+│   ├── Intervention results
+│   └── Robustness results
 │
-└── 📂 figures/
-    ├── 10_observed_vs_simulated.png
-    ├── 11_intervention_policy_comparison.png
-    ├── 11_prevented_readmissions.png
-    ├── 12_ablation_effects.png
-    ├── 12_mean_weighted_degree.png
-    ├── 12_network_density.png
-    ├── 12_risk_network_robustness.png
-    ├── 12_robustness_summary.png
-    └── 12_targeting_policy_*.png
+├── 🖼️ figures/
+│   ├── Network figures
+│   ├── Model evaluation figures
+│   ├── Intervention figures
+│   └── Robustness figures
+│
+├── 📄 ABM_SNA_Proposal.docx
+│
+└── 📖 README.md
 ```
 
 ---
 
-# 🗃️ Results Organization
+## 📊 Key Output Files
 
-Each notebook produces machine-readable evidence.
+The `results/` directory contains machine-readable evidence generated throughout the pipeline.
+
+### Network
 
 ```text
-01 → Dataset Audit
-02 → Cleaning
-03 → Patient Representation
-04 → Split & Leakage
-05 → Features
-06 → Network
-07 → SNA
-08 → ML
-09 → ABM Design
-10 → ABM Validation
-11 → Intervention
-12 → Robustness
+06_patient_similarity_edges_k10.csv
+06_patient_similarity_nodes.csv
+06_network_summary.json
+06_network_config.json
 ```
 
-The `results/` folder therefore acts as the project's **evidence layer**.
-
-The `figures/` folder contains the main visual outputs.
-
-The `notebooks/` folder contains the complete computational workflow.
-
----
-
-# 🧰 Technologies Used
-
-| Technology      | Role                      |
-| --------------- | ------------------------- |
-| 🐍 Python       | Main programming language |
-| 🐼 Pandas       | Data manipulation         |
-| 🔢 NumPy        | Numerical computation     |
-| 🤖 Scikit-learn | Machine learning          |
-| 📐 SciPy        | Scientific computing      |
-| 🕸️ NetworkX    | Network analysis          |
-| 🧩 Louvain      | Community detection       |
-| 📊 Matplotlib   | Visualization             |
-| 🧑‍💻 Mesa      | Agent-Based Modelling     |
-| 📓 Jupyter      | Reproducible notebooks    |
-| 💻 VS Code      | Development environment   |
-
----
-
-# 📊 Project at a Glance
-
-| Stage                           |  Key Number |
-| ------------------------------- | ----------: |
-| 🏥 Encounters                   | **101,766** |
-| 👤 Patients                     |  **71,518** |
-| 📊 Original variables           |      **50** |
-| 🧠 Training patients            |  **50,062** |
-| 🧪 Validation patients          |  **10,728** |
-| 🔒 Test patients                |  **10,728** |
-| 🧬 Candidate features           |      **38** |
-| 🔢 Transformed features         |      **57** |
-| 🔗 Network nodes                |  **50,062** |
-| 🔗 Network edges                | **434,595** |
-| 🎯 Network k                    |      **10** |
-| 📊 Mean degree                  |   **17.36** |
-| ⚖️ Mean edge weight             |  **0.9184** |
-| 🧩 Louvain communities          |     **105** |
-| 📐 Modularity                   |  **0.8652** |
-| 🤖 Test AUROC                   |  **0.8709** |
-| 📈 Test AUPRC                   |  **0.5883** |
-| 📉 Test Brier                   |  **0.1224** |
-| 🎯 Test F1                      |  **0.5720** |
-| 🧑‍💻 ABM validation population |  **10,728** |
-| ⚖️ Intervention budget          |     **10%** |
-| 🎯 Targeted patients            |   **1,073** |
-
----
-
-# 🔗 The Integrated Research Framework
-
-The project connects four major analytical layers:
-
-```mermaid
-flowchart LR
-
-A["👤 PATIENT DATA"]
---> B["🤖 MACHINE LEARNING"]
-
-A --> C["🔗 PATIENT SIMILARITY"]
-
-C --> D["🕸️ NETWORK SCIENCE"]
-
-B --> E["🧑‍💻 AGENT-BASED MODEL"]
-D --> E
-
-E --> F["🎯 INTERVENTION POLICIES"]
-
-F --> G["🏥 SIMULATED READMISSION"]
-
-G --> H["🔬 ROBUSTNESS"]
-
-H --> I["📊 EVIDENCE"]
-```
-
----
-
-# 🧠 What Makes the Approach Different?
-
-A conventional workflow may look like:
+### SNA
 
 ```text
-Patient Data
-     ↓
-Prediction
-     ↓
-Risk Score
+07_centrality.csv
+07_centrality_summary.csv
+07_community_assignments.csv
+07_community_summary.csv
+07_component_summary.csv
+07_sna_summary.json
 ```
 
-This project extends that idea:
+### Prediction
 
 ```text
-Patient Data
-     ↓
-Patient Representation
-     ↓
- ┌───────────────┐
- │               │
- ▼               ▼
-ML Risk      Similarity Network
- │               │
- │               ▼
- │              SNA
- │               │
- └───────┬───────┘
-         ▼
-       ABM
-         │
-         ▼
-Intervention Policies
-         │
-         ▼
-Simulation
-         │
-         ▼
-Robustness Analysis
+08_test_predictions.csv
+08_model_comparison.csv
+08_test_metrics.json
 ```
 
-The result is a framework that combines **individual risk** with **network context**.
-
----
-
-# 🔍 Methodological Contribution
-
-The project integrates:
-
-### 1️⃣ Patient-Level Machine Learning
-
-Estimates individual readmission risk.
-
-### 2️⃣ Clinical Patient Similarity Network
-
-Represents relationships between clinically similar patients.
-
-### 3️⃣ Network Analysis
-
-Extracts:
-
-* connectivity
-* centrality
-* communities
-* structural position
-
-### 4️⃣ Agent-Based Modelling
-
-Allows patient-level states and intervention scenarios to be simulated.
-
-### 5️⃣ Intervention Experiments
-
-Compares multiple targeting strategies under an equal resource constraint.
-
-### 6️⃣ Robustness Analysis
-
-Tests whether findings change under alternative modelling assumptions.
-
----
-
-# ⚠️ What the Project Can Conclude
-
-The framework provides evidence about:
-
-* patient-level representation quality
-* clinical similarity structure
-* network topology
-* community structure
-* baseline predictive performance
-* simulated ABM behaviour
-* intervention-policy behaviour under specified assumptions
-* sensitivity to modelling assumptions
-* stochastic uncertainty
-
----
-
-# 🚫 What the Project Cannot Conclude
-
-### Clinical similarity is not social interaction
-
-An edge in the network means:
-
-> **The patients are clinically similar according to the defined feature representation.**
-
-It does **not** mean:
-
-* friendship
-* communication
-* social influence
-* treatment relationship
-* causal interaction
-
----
-
-### Simulation is not a clinical trial
-
-The ABM evaluates outcomes under specified assumptions.
-
-Simulated intervention effects should therefore not automatically be interpreted as demonstrated real-world treatment effects.
-
----
-
-### Prediction is not causation
-
-A high predicted risk does not itself establish that a particular intervention will cause the patient's outcome to change.
-
----
-
-# 🕒 Important Dataset Limitation
-
-The dataset does not provide a sufficiently reliable encounter timestamp for a strict temporal train/test split.
-
-Therefore:
-
-* CSV row order was **not** treated as chronology.
-* The temporal limitation is explicitly documented.
-* The project instead uses patient-level train/validation/test separation.
-
-This is an important limitation when interpreting the modelling pipeline.
-
----
-
-# 🧪 Reproducibility
-
-The project uses deterministic seeds where appropriate.
-
-Primary seed:
-
-```python
-SEED = 42
-```
-
-Intermediate outputs are saved after each major stage.
-
-This makes the project reproducible as:
+### ABM
 
 ```text
-Raw Dataset
-     ↓
-01
-     ↓
-02
-     ↓
-03
-     ↓
-04
-     ↓
-05
-     ↓
-06
-     ↓
-07
-     ↓
-08
-     ↓
-09
-     ↓
-10
-     ↓
-11
-     ↓
-12
-     ↓
-Final Evidence
+09_abm_agent_state.csv
+09_abm_calibration.csv
+09_abm_config.json
+09_abm_train_no_intervention.csv
+09_abm_validation_no_intervention.csv
+09_abm_validation_risk_bins.csv
 ```
 
----
-
-# ▶️ Running the Project
-
-Clone the repository:
-
-```bash
-git clone https://github.com/gaxxtri/ABM-medical_readmission.git
-```
-
-Enter the project directory:
-
-```bash
-cd ABM-medical_readmission
-```
-
-Install the main dependencies:
-
-```bash
-pip install pandas numpy scipy scikit-learn networkx matplotlib jupyter
-```
-
-For Agent-Based Modelling:
-
-```bash
-pip install mesa
-```
-
-Launch Jupyter:
-
-```bash
-jupyter notebook
-```
-
-Run the notebooks sequentially:
+### Intervention
 
 ```text
-01 → 02 → 03 → 04 → 05 → 06
-                         ↓
-07 → 08 → 09 → 10 → 11 → 12
+11_intervention_replication_results.csv
+11_intervention_policy_summary.csv
+11_paired_policy_comparisons.csv
+11_target_selection_audit.csv
+11_intervention_config.json
 ```
 
----
-
-# 📓 Final Presentation Notebook
-
-A dedicated final presentation notebook is included to communicate the complete research story.
-
-It is designed to present:
+### Robustness
 
 ```text
-Problem
-  ↓
-Dataset
-  ↓
-Methodology
-  ↓
-Patient Representation
-  ↓
-Similarity Network
-  ↓
-SNA
-  ↓
-Readmission Model
-  ↓
-ABM
-  ↓
-Intervention Experiments
-  ↓
-Robustness
-  ↓
-Final Evidence
+12_network_sensitivity.csv
+12_robustness_summary.csv
+12_effect_sizes.csv
+12_seed_robustness.csv
+12_seed_summary.csv
+12_ablation_results.csv
+12_ablation_summary.csv
+12_final_evidence_summary.csv
+12_network_target_stability.csv
 ```
-
-The presentation notebook is intended for **staff/project evaluation**, rather than only code execution.
 
 ---
 
-# 🖼️ Visual Evidence
+## 🖼️ Figures
 
-The project generates figures for:
-
-* 📊 Dataset analysis
-* 🔗 Patient similarity network
-* 🕸️ Network structure
-* 🧩 Community analysis
-* 🤖 Model performance
-* 🧪 Observed vs simulated outcomes
-* 🎯 Intervention comparison
-* 🛡️ Prevented readmissions
-* 🔬 Robustness
-* 🧩 Ablation
-* 🔗 Network sensitivity
-
-Main visual evidence is available inside:
+The `figures/` directory contains the major visual outputs from the analysis, including:
 
 ```text
-figures/
+📈 Readmission model evaluation
+🕸️ Network structure
+👥 Community structure
+💉 Intervention policy comparison
+🎯 Prevented readmission analysis
+🧪 Robustness analysis
+📊 Ablation analysis
 ```
 
 ---
 
-# 🏆 Key Research Story
+## 🛠️ Technology Stack
 
-```mermaid
-flowchart TD
+<div align="center">
 
-A["🏥 101,766 Encounters"]
---> B["👤 71,518 Patients"]
+<img src="https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python">
+<img src="https://img.shields.io/badge/Pandas-Data%20Processing-150458?style=flat-square&logo=pandas">
+<img src="https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?style=flat-square&logo=numpy">
+<img src="https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?style=flat-square&logo=scikit-learn">
+<img src="https://img.shields.io/badge/NetworkX-Network%20Analysis-green?style=flat-square">
+<img src="https://img.shields.io/badge/Mesa-Agent%20Based%20Modelling-purple?style=flat-square">
+<img src="https://img.shields.io/badge/Jupyter-Notebooks-orange?style=flat-square&logo=jupyter">
 
-B --> C["🧬 57-Dimensional<br/>Transformed Representation"]
+</div>
 
-C --> D["🔗 50,062-Node<br/>Patient Similarity Network"]
+---
 
-D --> E["🕸️ 105 Communities"]
+## 🔁 Reproducibility
 
-C --> F["🤖 Readmission Prediction<br/>AUROC = 0.8709"]
+The project uses fixed random seeds where stochastic procedures are involved.
 
-E --> G["🧑‍💻 Agent-Based Model"]
+The pipeline records:
 
-F --> G
+* dataset audit information
+* feature-selection decisions
+* split configuration
+* similarity configuration
+* network configuration
+* model configuration
+* ABM calibration configuration
+* intervention budget
+* simulation seeds
+* robustness settings
 
-G --> H["🎯 4 Intervention Policies"]
+This allows the analysis to be reproduced and independently inspected.
 
-H --> I["⚖️ Equal 10% Budget"]
+---
 
-I --> J["🔬 Robustness & Ablation"]
+## 👩‍🔬 Research Workflow
 
-J --> K["📊 Final Evidence"]
+```text
+Question
+   ↓
+Data
+   ↓
+Audit
+   ↓
+Clean
+   ↓
+Represent
+   ↓
+Split
+   ↓
+Engineer
+   ↓
+Build Network
+   ↓
+Analyze Network
+   ↓
+Predict Risk
+   ↓
+Build ABM
+   ↓
+Validate ABM
+   ↓
+Simulate Interventions
+   ↓
+Test Robustness
+   ↓
+Interpret Evidence
 ```
 
 ---
 
-# 🎓 Final Research Takeaway
+<div align="center">
 
-The project develops a reproducible framework that moves through:
+## 🌱 From Prediction to Simulation
 
-> **Clinical Data → Patient Representation → Similarity Network → Network Structure → Readmission Prediction → Agent-Based Simulation → Intervention Experiments → Robustness Analysis**
+**Prediction asks:**
+*"Who is at risk?"*
 
-The central methodological idea is:
+**Network analysis asks:**
+*"Who is clinically similar to whom?"*
 
-> **Patients should not only be viewed as independent observations with individual risk scores; clinically similar patients can also be represented as a network, allowing network structure to become part of an intervention-simulation framework.**
+**Agent-Based Modelling asks:**
+*"What happens when patient-level behaviour is simulated?"*
 
-The project therefore brings together:
+**Intervention experiments ask:**
+*"How do different targeting strategies behave under the same resource constraint?"*
 
-**Data Science + Machine Learning + Network Science + Agent-Based Modelling**
+<br>
 
-into one end-to-end healthcare analytics pipeline.
+### 🏥 → 🧬 → 🕸️ → 🤖 → 💉 → 🔬
+
+### Patient Similarity Network + Agent-Based Modelling for Hospital Readmission
+
+</div>
+
+---
+
+## 📜 Project Status
+
+```text
+01 Dataset Audit                  ✅ PASS
+02 Data Cleaning                  ✅ PASS
+03 Patient Representation         ✅ PASS
+04 Leakage-Safe Split             ✅ PASS
+05 Feature Engineering            ✅ PASS
+06 Similarity Network             ✅ PASS
+07 SNA & Communities              ✅ PASS
+08 Readmission Model              ✅ PASS
+09 ABM Design & Calibration       ✅ PASS
+10 ABM Validation                 ✅ PASS
+11 Intervention Experiments       ✅ PASS
+12 Robustness & Final Evaluation  🔬 Final review
+```
 
 ---
 
-# 👩‍💻 Author
+<div align="center">
 
-## Gayatri Kanagaraj
+### 📚 Research Project
 
-**Integrated M.Sc. Data Science**
-Amrita Vishwa Vidyapeetham
+**Patient Similarity Network + Agent-Based Modelling for Hospital Readmission**
 
-### Interests
+*Clinical Analytics • Network Science • Machine Learning • Agent-Based Modelling • Intervention Simulation*
 
-`Data Science` · `Machine Learning` · `Healthcare Analytics` · `Social Network Analysis` · `Agent-Based Modelling` · `Sustainability` · `Social Impact`
+<br>
 
----
+⭐ **Reproducible • Modular • Leakage-Aware • Simulation-Based**
+
+</div>
+```
+
